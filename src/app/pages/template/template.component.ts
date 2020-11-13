@@ -10,10 +10,11 @@ import { PaisService } from 'src/app/services/pais.service';
 export class TemplateComponent implements OnInit {
 
   usuario = {
-    nombre: 'Jose Guadalupe',
-    apellido: 'Cortes',
-    correo: 'jose17y10@gmail.com',
-    pais: ''
+    nombre: 'Nelly',
+    apellido: 'Fragoso',
+    correo: 'nellyfrgoso1003@gmail.com',
+    pais: 'CRI',
+    genero: 'F'
   }
 
   paises: any[] = [];
@@ -31,7 +32,7 @@ export class TemplateComponent implements OnInit {
           codigo: ''
         })
 
-        console.log(paises);
+        //console.log(paises);
       });
 
   }
