@@ -16,6 +16,7 @@ export class ReactiveComponent implements OnInit {
 
     this.crearFormulario();
     this.cargarDataFormulario();
+    this.crearListenners();
 
   }
 
@@ -84,17 +85,27 @@ export class ReactiveComponent implements OnInit {
     });
       
   }
+
+  crearListenners(){
+    //this.forma.valueChanges.subscribe(valor =>{
+      //console.log(valor);
+    //});
+
+    //this.forma.statusChanges.subscribe(status => console.log({ status }));
+    this.forma.get('nombre').valueChanges.subscribe(console.log);
+  }
+
   cargarDataFormulario(){
     //this.forma.setValue({
       this.forma.reset({
-      nombre: "josee",
-      apellido: "Cortes",
-      correo: "jose@gmail.com",
+      nombre: "Nelly",
+      apellido: "Fragoso",
+      correo: "nelly@gmail.com",
       pass1: '123',
       pass2: '123',
       direccion: {
         distrito: "Ontario",
-        ciudad: "ontawa"
+        ciudad: "Ontawa"
       }
     });
     ['Comer','Dormir'].forEach(valor => this.pasatiempos.push( this.fb.control(valor) ));
